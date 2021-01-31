@@ -9,11 +9,6 @@
 ![screenshot of the app](https://raw.githubusercontent.com/praveenorugantitech/praveenorugantitech-news-reactjs/master/src/images/screenshot.PNG)
 
 
-### Live Demo
-
-[https://praveenorugantitech.github.io/praveenorugantitech-news-reactjs/](https://praveenorugantitech.github.io/praveenorugantitech-news-reactjs/)
-
-
 ### Setup Local Instructions
 
 ```
