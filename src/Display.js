@@ -19,7 +19,7 @@ class Display extends Component {
   componentWillReceiveProps(nextProps) {
     if (nextProps !== this.props) {
       this.setState({
-        url: `https://newsapi.org/v2/top-headlines?country=in&apiKey=01de81ab297f4a59979c7a4abf707ab0`,
+        url: `https://newsapi.org/v2/top-headlines?country=in&apiKey=${process.env.REACT_APP_APIKEY}`,
       });
 
       this.getArticles(nextProps.default);
