@@ -31,7 +31,7 @@ export default function NavBar() {
                         <MenuIcon />
                     </IconButton>
                     <Typography variant="h6" color="inherit">
-                        India News from NYTimes
+                        NYTimes News
           </Typography>
                 </Toolbar>
             </AppBar>

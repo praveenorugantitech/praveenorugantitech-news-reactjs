@@ -55,7 +55,7 @@ function TopStories({ loading, topStories, getTopArticles }) {
                         <Link component="button" variant="body2">Go Back</Link>
                     </NavLink>
 
-                    <h6 className="MuiTypography-h6">{heading}</h6>
+                    <p className="MuiTypography-h6">{heading}</p>  
 
                     <div className={classes.root} >
                         <Grid container spacing={3}>

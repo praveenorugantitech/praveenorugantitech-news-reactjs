@@ -8,6 +8,7 @@ import SearchIcon from "@material-ui/icons/Search";
 const Search = ({ searchArticles }) => {
   const [text, setText] = useState("");
   const handleChange = (e) => {
+    console.log(e.target.value)
     setText(e.target.value);
   };
   const handleSubmit = (e) => {
@@ -16,7 +17,7 @@ const Search = ({ searchArticles }) => {
   };
   return (
     <div>
-      <form onSubmit={handleSubmit}>
+      <form onClick={handleSubmit} onSubmit={handleSubmit}>
         <TextField
           label="Search articles"
           type="text"

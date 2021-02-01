@@ -11,11 +11,13 @@ const App = () => {
   const [loading, setLoading] = useState(false);
   const [articles, setArticles] = useState([]);
   const [topStories, setTopStories] = useState([]);
+  const [heading,setHeading] = useState("");
 
   useEffect(() => {
+    setHeading("Articles on India");
     const getArticles = async () => {
       setLoading(true);
-      const res = await axios.get(`https://api.nytimes.com/svc/search/v2/articlesearch.json?q=India&api-key=${process.env.REACT_APP_NYTIMES_API_KEY}`);
+      const res = await axios.get(`https://api.nytimes.com/svc/search/v2/articlesearch.json?q="India"&api-key=${process.env.REACT_APP_NYTIMES_API_KEY}`);
       setArticles(res.data.response.docs);
       setLoading(false);
     };
@@ -23,6 +25,7 @@ const App = () => {
   }, []);
 
   const searchArticles = async (text) => {
+    setHeading(`Articles on ${text}`);
     setLoading(true);
     const res = await axios.get(`https://api.nytimes.com/svc/search/v2/articlesearch.json?q=${text}&api-key=${process.env.REACT_APP_NYTIMES_API_KEY}`);
     setArticles(res.data.response.docs);
@@ -47,7 +50,8 @@ const App = () => {
                 <Search searchArticles={searchArticles} />
                 <NavLink to="/praveenorugantitech-news-reactjs/topstories">
                   <Link component="button" variant="body2">Go to top stories in World, U.S, Politics, Technology, Movies and Food</Link>
-                </NavLink>
+                </NavLink>    
+                <p className="MuiTypography-h6">{heading}</p>          
                 <Articles loading={loading} articles={articles} />
               </>
             )} />
