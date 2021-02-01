@@ -42,17 +42,17 @@ const App = () => {
       <Container>
         <Typography color="textPrimary" gutterBottom variant="h2" align="center">
           <Switch>
-            <Route exact path="/" render={() => (
+            <Route exact path="/praveenorugantitech-news-reactjs" render={() => (
               <>
                 <Search searchArticles={searchArticles} />
-                <NavLink to="/topstories">
+                <NavLink to="/praveenorugantitech-news-reactjs/topstories">
                   <Link component="button" variant="body2">Go to top stories in World, U.S, Politics, Technology, Movies and Food</Link>
                 </NavLink>
                 <Articles loading={loading} articles={articles} />
               </>
             )} />
 
-            <Route exact path="/topstories" render={() => (
+            <Route exact path="/praveenorugantitech-news-reactjs/topstories" render={() => (
               <>
                 <TopStories loading={loading} topStories={topStories} getTopArticles={getTopArticles} />
               </>

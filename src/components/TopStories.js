@@ -51,7 +51,7 @@ function TopStories({ loading, topStories, getTopArticles }) {
                         <Button onClick={() => {setHeading("Food");  getTopArticles('food'); }} variant="outlined" style={{color:'orange'}}>Food</Button>
                     </div>
 
-                    <NavLink to="/">
+                    <NavLink to="/praveenorugantitech-news-reactjs">
                         <Link component="button" variant="body2">Go Back</Link>
                     </NavLink>
 

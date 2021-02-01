@@ -15,6 +15,11 @@ Register in [https://developer.nytimes.com/my-apps](https://developer.nytimes.co
 ![screenshot of the app](https://raw.githubusercontent.com/praveenorugantitech/praveenorugantitech-news-reactjs/master/src/images/screenshot2.PNG)
 
 
+### Live Demo
+
+[https://praveenorugantitech.github.io/praveenorugantitech-news-reactjs/](https://praveenorugantitech.github.io/praveenorugantitech-news-reactjs/){:target="_blank"}
+
+
 ### Setup Local Instructions
 
 ```
