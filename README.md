@@ -8,7 +8,9 @@ Top Stories: [https://api.nytimes.com/svc/topstories/v2/${section}.json?api-key=
 
 ### App Screenshots
 
-![screenshot of the app](https://raw.githubusercontent.com/praveenorugantitech/praveenorugantitech-news-reactjs/master/src/images/screenshot.PNG)
+![screenshot of the app](https://raw.githubusercontent.com/praveenorugantitech/praveenorugantitech-news-reactjs/master/src/images/screenshot1.PNG)
+
+![screenshot of the app](https://raw.githubusercontent.com/praveenorugantitech/praveenorugantitech-news-reactjs/master/src/images/screenshot2.PNG)
 
 
 ### Setup Local Instructions
