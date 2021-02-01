@@ -1,31 +1,68 @@
-import React, { Component } from 'react';
-import './App.css';
-import Display from './Display.js';
-import './Display.css';
-import logo from './images/praveenorugantitech.PNG';
-import news from './images/news.png';
+import React, { useEffect, useState } from 'react';
+import { Route, Switch, NavLink } from "react-router-dom";
+import axios from 'axios';
+import NavBar from './components/layouts/NavBar';
+import { Articles, TopStories, Search } from './components';
+import Typography from "@material-ui/core/Typography";
+import Container from '@material-ui/core/Container';
+import Link from '@material-ui/core/Link';
 
-class App extends Component {
-  render() {
-    return (
-      <div className="app">
-        <div className="appHeader">
-          <img className="appLogo" src={logo} alt="Praveen Oruganti Tech" />
+const App = () => {
+  const [loading, setLoading] = useState(false);
+  const [articles, setArticles] = useState([]);
+  const [topStories, setTopStories] = useState([]);
 
-          <div className="title">
-            <h1>India News</h1>
-            <h4>
-              Powered by
-              <a href="https://newsapi.org/"> News API </a>🔥{' '}
-            </h4>
-          </div>
+  useEffect(() => {
+    const getArticles = async () => {
+      setLoading(true);
+      const res = await axios.get(`https://api.nytimes.com/svc/search/v2/articlesearch.json?q=India&api-key=${process.env.REACT_APP_NYTIMES_API_KEY}`);
+      setArticles(res.data.response.docs);
+      setLoading(false);
+    };
+    getArticles();
+  }, []);
 
-          <img className="scriptLogo" src={news} alt="Javascript Logo" />
-        </div>
-        <Display/>
-      </div>
-    );
-  }
-}
+  const searchArticles = async (text) => {
+    setLoading(true);
+    const res = await axios.get(`https://api.nytimes.com/svc/search/v2/articlesearch.json?q=${text}&api-key=${process.env.REACT_APP_NYTIMES_API_KEY}`);
+    setArticles(res.data.response.docs);
+    setLoading(false);
+  };
+
+  const getTopArticles = async (section) => {
+    setLoading(true);
+    const res = await axios.get(`https://api.nytimes.com/svc/topstories/v2/${section}.json?api-key=${process.env.REACT_APP_NYTIMES_API_KEY}`);
+    setTopStories(res.data.results);
+    setLoading(false);
+  };
+
+  return (
+    <div>
+      <NavBar />
+      <Container>
+        <Typography color="textPrimary" gutterBottom variant="h2" align="center">
+          <Switch>
+            <Route exact path="/" render={() => (
+              <>
+                <Search searchArticles={searchArticles} />
+                <NavLink to="/topstories">
+                  <Link component="button" variant="body2">Go to top stories in World, U.S, Politics, Technology, Movies and Food</Link>
+                </NavLink>
+                <Articles loading={loading} articles={articles} />
+              </>
+            )} />
+
+            <Route exact path="/topstories" render={() => (
+              <>
+                <TopStories loading={loading} topStories={topStories} getTopArticles={getTopArticles} />
+              </>
+            )} />
+
+          </Switch>
+        </Typography>
+      </Container>
+    </div>
+  );
+};
 
 export default App;

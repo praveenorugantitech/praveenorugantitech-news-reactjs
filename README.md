@@ -1,8 +1,10 @@
-# News App developed using React JS and News API
+# News App developed using React JS and NYTimes API
 
 ### API
 
-[https://newsapi.org/v2/top-headlines?country=in&apiKey=${process.env.REACT_APP_APIKEY}](https://newsapi.org/v2/top-headlines?country=in&apiKey=${process.env.REACT_APP_APIKEY})
+Articles: [https://api.nytimes.com/svc/search/v2/articlesearch.json?q=${text}&api-key=${process.env.REACT_APP_NYTIMES_API_KEY}](https://api.nytimes.com/svc/search/v2/articlesearch.json?q=${text}&api-key=${process.env.REACT_APP_NYTIMES_API_KEY})
+
+Top Stories: [https://api.nytimes.com/svc/topstories/v2/${section}.json?api-key=${process.env.REACT_APP_NYTIMES_API_KEY}](https://api.nytimes.com/svc/topstories/v2/${section}.json?api-key=${process.env.REACT_APP_NYTIMES_API_KEY})
 
 ### App Screenshots
 
@@ -15,9 +17,9 @@
 git clone https://github.com/praveenorugantitech/praveenorugantitech-news-reactjs.git
 cd praveenorugantitech-news-reactjs
 
-create .env file and include your API Key related to News API
+create .env file and include your API Key related to NYTimes API got from https://developer.nytimes.com/my-apps
 
-REACT_APP_APIKEY=""
+REACT_APP_NYTIMES_API_KEY=""
 
 
 npm install
