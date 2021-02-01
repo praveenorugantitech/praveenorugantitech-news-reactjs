@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.js": "/praveenorugantitech-news-reactjs/static/js/main.b9f4061a.chunk.js",
+    "main.js": "/praveenorugantitech-news-reactjs/static/js/main.eaf19551.chunk.js",
     "runtime-main.js": "/praveenorugantitech-news-reactjs/static/js/runtime-main.d574f6df.js",
     "static/js/2.c906c93f.chunk.js": "/praveenorugantitech-news-reactjs/static/js/2.c906c93f.chunk.js",
     "index.html": "/praveenorugantitech-news-reactjs/index.html",
@@ -10,6 +10,6 @@
   "entrypoints": [
     "static/js/runtime-main.d574f6df.js",
     "static/js/2.c906c93f.chunk.js",
-    "static/js/main.b9f4061a.chunk.js"
+    "static/js/main.eaf19551.chunk.js"
   ]
 }
